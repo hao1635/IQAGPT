@@ -29,7 +29,7 @@ Run the commands from the repository root. Initial tokenizer loading uses the pu
 
 CT-IQA contains 1,000 abdominal CT slices: **800 training images and 200 test images**. Each split contains eight quality levels: NDCT, LDCT, five MAP-NN denoising levels, and RED-CNN. Images are 512 × 512 float32 NumPy arrays. The released image representation is already windowed and normalized; the loader clips it to [0, 1] and repeats it across three channels.
 
-The dataset is being prepared for distribution through Google Drive. Public access and the final download link will be added after the source-data redistribution terms are confirmed. The code license does not grant rights to the underlying CT images. See the [dataset card](docs/DATASET_CARD.md).
+The author has confirmed redistribution authorization for the prepared dataset. The Google Drive download link will be added once upload verification is complete. Dataset reuse terms are separate from the MIT code license; see the [dataset card](docs/DATASET_CARD.md).
 
 ```text
 CT-IQA/

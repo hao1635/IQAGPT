@@ -34,4 +34,4 @@ A clean installation, full training run, full inference/evaluation pass and GPU 
 3. Existing notebook phrase matching does not fully recover the published table and contains overlapping lesion phrases. A new score evaluation protocol is not silently substituted here.
 4. The extracted current model has 73,101,882 parameters, whereas the paper reports approximately 210M. This is an unresolved discrepancy between the archived model/configuration and the paper, not a claim about the final model.
 5. ViT-C, ViT-R, CLIP-IQA, MiniGPT-4 and ChatGPT-interface experiments have not been consolidated into this initial captioning-code release. They remain distinct experiments in the author's archive.
-6. Source CT redistribution terms and a dataset license need to be established for public dataset access.
+6. The author confirmed dataset redistribution authorization on 2026-11-22. The specific authorization document or applicable dataset-license identifier has not been included; dataset rights remain separate from the MIT code license.

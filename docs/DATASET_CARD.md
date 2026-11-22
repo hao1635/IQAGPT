@@ -22,9 +22,9 @@ The prepared archive preserves current input files exactly. It includes `iqagpt_
 
 ## Access and terms
 
-Public download is pending confirmation of the terms applicable to the original CT source files. The historic [2016 challenge Data Use Agreement](https://www.aapm.org/GrandChallenge/LowDoseCT/documents/DataSharingAgreementLowDoseCTGrandChallenge.pdf), notably sections 3.1 and 4, limits use and disclosure of data supplied under that agreement. A separate [TCIA collection](https://www.cancerimagingarchive.net/collection/ldct-and-projection-data/) has its own licenses; it should not be assumed to relicense every file obtained under the historic challenge agreement.
+The author confirmed on 2026-11-22 that redistribution of this prepared CT-IQA dataset is covered by existing authorization or an applicable open license. The specific authorization document or license identifier has not been supplied with this release; contact the authors for the applicable reuse terms.
 
-The repository's MIT code license does not apply to source CT images, image derivatives, annotations, or third-party checkpoints. This draft dataset card does not assign a new blanket data license. Final distribution terms and the Google Drive link must be recorded before public release.
+The repository's MIT code license does not apply to source CT images, image derivatives, annotations, or third-party checkpoints. This dataset card does not assign a new blanket data license. Source-data attribution and any applicable conditions remain separate from the code license.
 
 ## Attribution
 
