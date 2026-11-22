@@ -1,0 +1,8 @@
+# Validated against the existing research environment; install matching PyTorch first.
+numpy==1.24.2
+PyYAML==6.0
+timm==0.6.12
+transformers==4.28.0
+Pillow>=9,<11
+# torch==1.10.1 and torchvision==0.11.2 were used for release smoke checks.
+# Select their CUDA/CPU wheels for your system separately.

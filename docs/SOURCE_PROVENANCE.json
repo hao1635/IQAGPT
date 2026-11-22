@@ -1,0 +1,29 @@
+{
+  "upstream": "https://github.com/sangjoon-park/Medical_X-VL",
+  "files": [
+    {
+      "source": "models/ibot_vit.py",
+      "destination": "models/ibot_vit.py",
+      "original_sha256": "d4456dabf8ef82c869bfc8e7a094086a3ff0acc5fab9e303a8780b6e55500f7f",
+      "changes": "Removed unused debugger/LoRA imports; ViT uses timm truncated-normal helper."
+    },
+    {
+      "source": "models/xbert.py",
+      "destination": "models/xbert.py",
+      "original_sha256": "58a0a0f8dfdf4c50d97dfd0d1a65e1817f81926d7787b0a8e42d8b247602b9e7",
+      "changes": "Removed unused debugger/LoRA imports; ViT uses timm truncated-normal helper."
+    },
+    {
+      "source": "models/predictor.py",
+      "destination": "models/predictor.py",
+      "original_sha256": "4ae26a0981ec7fc1b8badb1277e12acda491a5b653dfbfab106770ec7ee02ffb",
+      "changes": "Removed unused debugger/LoRA imports; ViT uses timm truncated-normal helper."
+    },
+    {
+      "source": "models/model_generation.py",
+      "destination": "models/model_generation.py",
+      "original_sha256": "a29df59daad6464d8d33babd644e16457b705315d1f6f816bed6731ed6379bf9",
+      "changes": "Retained original XVLModel constructor, non-distilled forward and beam generation; removed unused task heads and unsupported distillation."
+    }
+  ]
+}
