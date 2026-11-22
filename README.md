@@ -29,7 +29,11 @@ Run the commands from the repository root. Initial tokenizer loading uses the pu
 
 CT-IQA contains 1,000 abdominal CT slices: **800 training images and 200 test images**. Each split contains eight quality levels: NDCT, LDCT, five MAP-NN denoising levels, and RED-CNN. Images are 512 × 512 float32 NumPy arrays. The released image representation is already windowed and normalized; the loader clips it to [0, 1] and repeats it across three channels.
 
-The author has confirmed redistribution authorization for the prepared dataset. The Google Drive download link will be added once upload verification is complete. Dataset reuse terms are separate from the MIT code license; see the [dataset card](docs/DATASET_CARD.md).
+Download **[CT-IQA-v0.1.tar.gz from Google Drive](https://drive.google.com/file/d/1YXDwMOM0UXyFVReachjIPiPpaj1OsiVU/view)** (396,881,937 bytes, approximately 397 MB), or open the [dataset folder](https://drive.google.com/drive/folders/1B72KrRVFkG9p2sqdxmcL0Rmh9zfDtcpE). The download is accessible without signing in.
+
+Archive SHA-256: `a56a6e0608eb417d793e2eff589cf57faae1feecd508fe64710f00b0cfc73333`.
+
+The author has confirmed redistribution authorization for the prepared dataset. Dataset reuse terms are separate from the MIT code license; see the [dataset card](docs/DATASET_CARD.md).
 
 ```text
 CT-IQA/
@@ -45,8 +49,11 @@ CT-IQA/
 ```
 
 ```bash
+tar -xzf CT-IQA-v0.1.tar.gz
 python scripts/validate_dataset.py --data-root /path/to/CT-IQA
 ```
+
+The validation command checks the arrays, annotation IDs, quality-level counts, and all 1,004 source-file hashes in `checksums.sha256`.
 
 `labels.json` preserves the scores read by the archived image-only loader. `annotation_versions/iqagpt_labels.json` preserves an alternate score file: its training labels agree with `labels.json`, while 115 of the 200 test records differ in at least one score. Neither is silently substituted for the other or asserted to be the final publication labels.
 
