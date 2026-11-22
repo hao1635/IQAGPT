@@ -11,7 +11,7 @@ Prepared on 2026-11-22 from the author's archived research project.
 
 ## Changes from the research workspace
 
-The core caption-model constructor, non-distilled forward pass and beam search are extracted from the archived code. Unused task heads, debugger imports, unused LoRA imports and unrelated VQA/retrieval dependencies are omitted. Checkpoint key normalization and positional-embedding interpolation happen before loading. Inference rejects checkpoints with missing model parameters. Data paths are command-line arguments. No server paths, credentials, notebook outputs, patient directories or internal training logs are included.
+The core caption-model constructor, non-distilled forward pass and beam search are extracted from the archived code. Unused task heads, debugger imports, unused LoRA imports and unrelated VQA/retrieval dependencies are omitted. Checkpoint key normalization and positional-embedding interpolation happen before loading. Inference rejects checkpoints with missing model parameters. The standard BertTokenizer reads the original CXR-BERT vocabulary; the archived custom tokenizer is an unchanged BertTokenizer subclass, so remote Python code is unnecessary. Data paths are command-line arguments. No server paths, credentials, notebook outputs, patient directories or internal training logs are included.
 
 The training entry point is new release tooling. It uses explicit per-step warmup/cosine scheduling, saves model weights each epoch, and avoids automatic test-set evaluation during training. The original experimental scheduler and checkpoint-selection behavior have not been reproduced exactly. This tooling should not be mistaken for a recovered final experiment script.
 
@@ -19,6 +19,7 @@ The training entry point is new release tooling. It uses explicit per-step warmu
 
 Checked in the existing Python 3.8.13 research environment with torch 1.10.1+cu102, torchvision 0.11.2+cu102, transformers 4.28.0, timm 0.6.12, numpy 1.24.2, and PyYAML 6.0. No GPU was used for release checks.
 
+- The standard BERT tokenizer loaded offline, the Medical X-VL initialization loaded all model parameters, and a training-mode forward pass returned a finite loss. No optimizer update or retraining was performed.
 - Three data-loader tests passed: clipping/channel replication and augmentation, invalid-ID rejection, and caption preprocessing.
 - A historical caption-model checkpoint loaded with no missing or unexpected model keys after image-position interpolation.
 - A short CPU beam-generation run on one CT-IQA sample completed. This establishes a smoke run, not inference accuracy.

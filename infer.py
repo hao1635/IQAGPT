@@ -6,7 +6,7 @@ from pathlib import Path
 import torch
 import yaml
 from torch.utils.data import DataLoader, Subset
-from transformers import AutoTokenizer
+from transformers import BertTokenizer
 
 from iqagpt.checkpoints import load_checkpoint
 from iqagpt.data import CTIQADataset
@@ -31,7 +31,7 @@ def main():
     torch.set_num_threads(4)
     config = yaml.safe_load(Path(args.config).read_text())
     config['bert_config'] = str(Path(args.config).resolve().parent / Path(config['bert_config']).name)
-    tokenizer = AutoTokenizer.from_pretrained(config['tokenizer'], local_files_only=args.local_files_only)
+    tokenizer = BertTokenizer.from_pretrained(config['tokenizer'], local_files_only=args.local_files_only)
     model = XVLModel(config=config, tokenizer=tokenizer)
     print(json.dumps(load_checkpoint(model, args.checkpoint)))
     device = torch.device(args.device)
